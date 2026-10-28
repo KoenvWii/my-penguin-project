@@ -1,0 +1,25 @@
+---
+title: "My first penguin analysis"
+output: html_document
+date: "2026-10-28"
+---
+
+## Introduction
+This is my first data project using the `palmerpenguins` dataset!
+
+```{r setup, message=FALSE, warning=FALSE}
+library(tidyverse)
+library(palmerpenguins)
+```
+
+## Penguin Species Comparison
+Let's see how body mass compares across different penguin species.
+
+```{r plot, echo=FALSE, warning=FALSE}
+ggplot(data = penguins, aes(x = species, y = body_mass_g, fill = species)) +
+  geom_boxplot() +
+  labs(title = "Penguin Body Mass by Species",
+       x = "Species",
+       y = "Body Mass (g)") +
+  theme_minimal()
+```
